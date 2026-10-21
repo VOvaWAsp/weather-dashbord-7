@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Погодний дашборд</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+<header>
+  <h1>Погодний дашборд</h1>
+
+  <nav>
+    <a href="#current-weather">Поточна погода</a>
+    <a href="#forecast">Прогноз</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="input-selection">
+
+    <h2>Пошук міста</h2>
+
+    <label for="weather-input">Назва міста</label>
+
+    <input
+      id="weather-input"
+      type="text"
+      class="city-input"
+      placeholder="Введіть назву міста"
+    >
+
+    <button class="search-button">Пошук</button>
+
+  </section>
+
+  <section class="error">
+
+    <h2>Повідомлення</h2>
+    <p>Місто не знайдено</p>
+
+  </section>
+
+  <div class="weather-layout">
+
+    <section class="container-single-weather" id="current-weather">
+
+      <h2>Поточна погода</h2>
+
+      <article class="weather-icon">
+
+        <h3>Іконка погоди</h3>
+
+        <img class="weather-img" alt="Іконка погоди">
+
+      </article>
+
+      <article>
+
+        <h3 class="city">Місто</h3>
+        <h3 class="temp">Температура</h3>
+        <h3 class="description">Опис погоди</h3>
+
+      </article>
+
+    </section>
+
+    <aside class="weather-advice">
+
+      <h2>Що вдягнути</h2>
+
+      <p>
+        Рекомендації щодо одягу залежать від поточної температури та погодних умов.
+      </p>
+
+    </aside>
+
+  </div>
+
+  <p id="avg-temp">Середня температура: —</p>
+
+  <section class="container-forecast-weather" id="forecast">
+
+    <h2 class="title">Прогноз на 7 днів</h2>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <p>&copy; 2023 Погодний дашборд. Всі права захищені.</p>
+
+</footer>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -8,7 +8,7 @@ const cityButton = document.querySelector(".input-selection button");
 
 const error = document.querySelector(".error");
 const containerSingle = document.querySelector(".container-single-weather");
-const containerForecast = document.querySelector(".container-forecast-weather");
+const listContainer = document.querySelector(".container-forecast-weather");
 const title = document.querySelector(".title");
 const weatherImg = document.querySelector(".weather-img");
 const avgTemp = document.querySelector("#avg-temp");
@@ -42,7 +42,7 @@ async function getWeather(city) {
     if (!response.ok) {
       error.style.display = "block";
       containerSingle.style.display = "none";
-      containerForecast.style.display = "none";
+      listContainer.style.display = "none";
       title.style.display = "none";
       avgTemp.textContent = "Середня температура: —";
       return;
@@ -74,7 +74,7 @@ async function getWeather(city) {
 
     error.style.display = "none";
     containerSingle.style.display = "grid";
-    containerForecast.style.display = "grid";
+    listContainer.style.display = "grid";
     title.style.display = "block";
 
   } catch (err) {
@@ -83,7 +83,7 @@ async function getWeather(city) {
 }
 
 function renderForecast(days) {
-  containerForecast
+  listContainer
     .querySelectorAll(".forecast-card")
     .forEach((card) => card.remove());
 
@@ -130,7 +130,7 @@ function renderForecast(days) {
 
     card.append(titleDay, icon, tempText, desc);
 
-    containerForecast.append(card);
+    listContainer.append(card);
   });
 
   const average = (totalTemp / days.length).toFixed(1);
